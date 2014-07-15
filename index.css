@@ -1,0 +1,11 @@
+body {
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+.navbar-brand-custom {
+    float: left;
+    font-size: 18px;
+    height: 50px;
+    line-height: 20px;
+}
