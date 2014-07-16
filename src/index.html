@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="RIWebApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,59 +43,24 @@
           </button>
           <a class="navbar-brand-custom" href="#"><img src="images/logo 001.jpg"></a>
         </div>
-        <div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="../">Home</a></li>
-				<li><a href="../about">About Us</a></li>
-				<li><a href="../page3">Page 3</a></li>
-				<li><a href="../contact">Contact Us</a></li>
+        <div class="navbar-collapse collapse" ng-controller="menuCtrl">
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+				<li ng-class="{ active: isActive('/about')}"><a href="#/about">About Us</a></li>
+				<li ng-class="{ active: isActive('/page3')}"><a href="#/page3">Page 3</a></li>
+				<li ng-class="{ active: isActive('/contact')}"><a href="#/contact">Contact Us</a></li>
 			</ul>
-          <!--<form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>-->
         </div><!--/.navbar-collapse -->
       </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Welcome to Robonoids India</h1>
-        <p>We are an organization that is focused on research and development in the field of electronics and robotics. As part of our work to create new technology we provide short courses to students at various levels. These courses help us educate students in our fields of research; and as a result allow us to learn about current student interest in the fields of science and technology.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
-
+	<div class="container">
+		<!-- Placeholder for views -->
+	    <div ng-view></div>
+	</div>
+	<div class="container">
       <footer>
-        <p>&copy; Company 2014</p>
+        <p>&copy; Robonoids India Pvt. Ltd. 2014</p>
       </footer>
     </div> <!-- /container -->
 
@@ -110,5 +75,5 @@
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
-	<script src="controllers/controllers.js"></script>
+	<script src="app.js"></script>
 </html>
